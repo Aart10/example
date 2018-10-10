@@ -1,6 +1,7 @@
 package calculadora;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.Label;
 /**
  *
  * @author X1
@@ -8,14 +9,13 @@ import java.awt.event.*;
 public class Calculadora implements WindowListener{
 
     private Frame f;
-    private Panel p;
-    private TextField t;
+    private Panel p,p2;
+    private Label l;
     private Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20;
     
     public Calculadora(){
         f=new Frame("Calculadora");
         p=new Panel();
-        t=new TextField("0");
         b1=new Button("CE");
         b2=new Button("C");
         b3=new Button("<");
@@ -65,8 +65,10 @@ public class Calculadora implements WindowListener{
         p.add(b19);
         p.add(b20);
         
+        p2.add(l=new Label("0",Label.RIGHT));
+        
         f.add(p,BorderLayout.CENTER);
-        f.add(t,BorderLayout.NORTH);
+        f.add(p2,BorderLayout.NORTH);
         
         f.setVisible(true);
         
